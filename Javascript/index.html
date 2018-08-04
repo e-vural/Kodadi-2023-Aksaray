@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">		
+	<title>Javascript</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+</head>
+<body>
+<a href="#" onclick="a()">Tıkla</a><a href="#" id="a2">Tıkla 2</a>
+<p id="p"></p>
+<p id="p2"></p>
+<hr>
+<p id="p3"></p>
+<input class="form-control" id="input2">
+<textarea class="form-control" id="input">
+	
+</textarea>
+
+
+
+<table class="table">
+	<tr>
+		<th> Başlık </th>
+		<td> <a onclick="sil(this)" href="#"> Sil </a> </td>
+	</tr>
+	<tr>
+		<th> Başlık </th>
+		<td> <a onclick="sil(this)" href="#"> Sil </a> </td>
+	</tr>
+	<tr>
+		<th> Başlık </th>
+		<td> <a onclick="sil(this)" href="#"> Sil </a> </td>
+	</tr>
+	<tr>
+		<th> Başlık </th>
+		<td> <a onclick="sil(this)" href="#"> Sil </a> </td>
+	</tr>
+
+</table>
+<script type="text/javascript" src="assets/js/jquery.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="my-js.js"></script>
+
+<script type="text/javascript">
+function sil(ths){
+	$.ajax({
+		url: "ajax.php",
+		data: { id: 1, isim: "Mehmet" },
+		type: "post",
+
+		success:function(data){
+			data = JSON.parse(data);
+			console.log(data)
+			console.log(data.id)
+			console.log(data.isim)
+					window.open("www.google.com")
+
+			var tr = $(ths).closest("tr");		
+			tr.remove();
+		},
+		error:function(e,d){
+			console.log(e)
+			console.log(d)
+		},
+
+	})
+
+}
+
+//a elementine tıklandığında bu fonksiyon çalışır. id p olan elementi alır rengini kırmızı yapar.
+	function a(){
+		document.getElementById("p").style = "color:red";
+	}
+//id si p olan elementin içine yazı yazar.
+	document.getElementById("p").innerHTML = "Bu alan javscripr ile eklendi";
+
+	$("#p2").html("<b>Naber burası jquery</b>");
+
+	$("#p2").append("<br><b>Naber burası jquery 2</b>");
+
+	$("#a2").on("click",function(){
+		$("#p2").css("color","red");
+	});
+
+	$("#input").on("keyup",function(){
+
+		$("#p3").html($(this).val());
+	});
+
+
+
+	var x = 5;
+	var y = "5";
+
+	console.log(x + parseInt(y));
+
+	if(x == y){
+
+	console.log("burası if içerisi");
+	}
+	else{
+
+	}
+
+
+	for (var i = 0; i <= 10; i++) {
+	console.log(i);
+		
+	}
+	var  objects ={
+		age : 25,
+		name: "Mehmet",
+		surname: "Vural"
+	}
+
+	for (object in objects) {
+
+	};
+
+	var i = 0;
+	while(i < 5){
+
+	console.log(i)
+	i++;
+	}
+
+
+
+
+</script>
+</body>
+</html>

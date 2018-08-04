@@ -1,0 +1,11 @@
+.pull-right{
+	float: right!important;
+}
+
+li.my-disabled{
+	text-decoration: line-through!important;
+}
+
+li.my-disabled span{
+	text-decoration: line-through!important;
+}
