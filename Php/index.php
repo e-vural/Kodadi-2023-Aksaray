@@ -1,106 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	
+	<title>Yapılacaklar Listesi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/my-css.css">
 </head>
 <body>
-<p>echo "Hello Word";</p>
-<?php
-//Burada echo ile yazdırma var 
-echo "<p>Hello Word</p>";
 
-?>
-<?php
-$color = "mavi";
+<?php include "navbar.php" ?>
+
+<div class="jumbotron">
+  <h2 class="display-6">Yapılacaklar</h2>
+	<ul class="list-group">
 
 
-echo 'Benim arabımın '. 
-$color 
+	<?php  
+		include "baglanti.php";
+		$select = $conn->prepare("SELECT * FROM yapilacaklar_listesi");
+		$select->execute();
+		$results = $select->fetchAll();
 
-.'dır<br>';
+		foreach ($results as $key => $value) {
+			$id = $value["id"];
+			$baslik = $value["baslik"];
+			$yapildi = $value["yapildi"];
+			$tarih = $value["tarih"];
 
-?>
+			$li = '<li class="list-group-item '.($yapildi == 0 ? "" : "disabled my-disabled").'">'.$baslik.' 
+			<span class="badge badge-'.($tarih == null ? "danger": "success").'"> '.($tarih == null ? "Tarih yok": $tarih).' </span>
+		<div class="pull-right btn-group" role="group" aria-label="Basic example">
+			<a href="detay.php?id='.$id.'" class="btn btn-info">Detay</a>
+			<a href="yapildi.php?id='.$id.'" class="btn btn-success">Yapıldı</a>
+			<a href="sil.php?id='.$id.'&benim=3" class="btn btn-danger">Sil</a>
+		</div>
+	  </li>';
+	  		echo $li;
 
-<?php
-$x = 5; // global scope
-$y = 7;
- 
-function toplama($x,$y) {
+		}
 
-    // using x inside this function will generate an error
-    
-
-    return $x + $y;
-} 
-$sonuc = toplama($x,$y);
-
-echo $sonuc;
-?>
-<br>
-<?php 
-echo "<pre>"; 
-$cars = array("Volvo","BMW","Toyota");
-$cars2 = ["Mercedes","Fiat","Ferrari"];
-print_r($cars);
-print_r($cars[0]);
-echo "<hr>";
-print_r($cars2);
-print_r($cars2[2]);
-echo "<hr>";
-$cars = array("Volvo"=> array("S40","S90"),
-	"BMW"=>array("models" =>"3.20","5.20"));
-
-	print_r($cars);
-
-	print_r($cars["Volvo"][0]);
-?>  
-
-<?php
-$x = '4';
-$y = 4;
-
-	echo $x + $y; 
+	 ?>
 
 
-	var_dump($x != $y);
-	var_dump($x >= $y);
-	var_dump($x < $y);
-echo "orjinal y".$y;
-echo "<br>";
-$y++;
-echo "1 arttırılmış y".$y;
-echo "<br>";
-$y--;
-echo "1 eksilmis y".$y;
+	</ul>
+	</div>
 
-$text = "Merhaba ";
-$text .= "Dünya";
-echo $text;
-	?>
-
-<?php 
-$x = 5;
-$y = "5";
-echo"<hr>";
-
-
-if($x === $y){
-
-echo "x ve y eşit tipleriyle beraber eşittir.";
-
-}else if($x == $y){
-echo "x ve y eşittir ama tipleri farklıdır";
-
-}
-else{
-
-echo "x ve y eşit değil";
-}
-
-
-
-
- ?>
+<script type="text/javascript" src="assets/js/jquery.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.js"></script>
 </body>
 </html>
-
