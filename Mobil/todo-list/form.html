@@ -1,0 +1,150 @@
+
+<!-- We don't need full layout here, because this page will be parsed with Ajax-->
+<!-- Top Navbar-->
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+    <div class="center sliding">Form</div>
+    <div class="right">
+      <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <!-- Page, data-page contains page name-->
+  <div data-page="form" class="page">
+    <!-- Scrollable page content-->
+    <div class="page-content">
+      <div class="content-block-title">Form Example</div>
+      <div class="list-block">
+        <ul>
+          <li>
+            <div class="item-content">
+              <div class="item-inner"> 
+                <div class="item-title label">Başlık</div>
+                <div class="item-input">
+                  <input type="text" name="baslik" placeholder="Başlık giriniz"/>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content">
+              <div class="item-inner"> 
+                <div class="item-title label">Tarih</div>
+                <div class="item-input">
+                  <input type="date" name="tarih" placeholder="Tarih" value="2014-04-30"/>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content">
+              <div class="item-inner"> 
+                <div class="item-title label">Yapıldı</div>
+                <div class="item-input">
+                  <label class="label-switch">
+                    <input name="yapildi" type="checkbox"/>
+                    <div class="checkbox"></div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="align-top">
+            <div class="item-content">
+              <div class="item-inner"> 
+                <div class="item-title label">İçerik</div>
+                <div class="item-input">
+                  <textarea name="icerik"></textarea>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="content-block">
+        <div class="row">
+          <div class="col-50"><a href="#" class="button button-big button-fill color-red">Cancel</a></div>
+          <div class="col-50">
+            <input type="submit" value="Submit" class="button button-big button-fill color-green"/>
+          </div>
+        </div>
+      </div>
+      <div class="content-block-title">Checkbox group</div>
+      <div class="list-block">
+        <ul>
+          <li>
+            <label class="label-checkbox item-content">
+              <input type="checkbox" name="ks-checkbox" value="Books" checked="checked"/>
+              <div class="item-inner">
+                <div class="item-title">Books</div>
+              </div>
+            </label>
+          </li>
+          <li>
+            <label class="label-checkbox item-content">
+              <input type="checkbox" name="ks-checkbox" value="Movies"/>
+              <div class="item-inner">
+                <div class="item-title">Movies</div>
+              </div>
+            </label>
+          </li>
+          <li>
+            <label class="label-checkbox item-content">
+              <input type="checkbox" name="ks-checkbox" value="Food"/>
+              <div class="item-inner">
+                <div class="item-title">Food</div>
+              </div>
+            </label>
+          </li>
+          <li>
+            <label class="label-checkbox item-content">
+              <input type="checkbox" name="ks-checkbox" value="Drinks"/>
+              <div class="item-inner">
+                <div class="item-title">Drinks</div>
+              </div>
+            </label>
+          </li>
+        </ul>
+      </div>
+      <div class="content-block-title">Radio buttons group</div>
+      <div class="list-block">
+        <ul>
+          <li>
+            <label class="label-radio item-content">
+              <input type="radio" name="ks-radio" value="Books" checked="checked"/>
+              <div class="item-inner">
+                <div class="item-title">Books</div>
+              </div>
+            </label>
+          </li>
+          <li>
+            <label class="label-radio item-content">
+              <input type="radio" name="ks-radio" value="Movies"/>
+              <div class="item-inner">
+                <div class="item-title">Movies</div>
+              </div>
+            </label>
+          </li>
+          <li>
+            <label class="label-radio item-content">
+              <input type="radio" name="ks-radio" value="Food"/>
+              <div class="item-inner">
+                <div class="item-title">Food</div>
+              </div>
+            </label>
+          </li>
+          <li>
+            <label class="label-radio item-content">
+              <input type="radio" name="ks-radio" value="Drinks"/>
+              <div class="item-inner">
+                <div class="item-title">Drinks</div>
+              </div>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
